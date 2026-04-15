@@ -21,3 +21,12 @@ async def heh(ctx, count_heh = 5):
 @bot.command()
 async def joined(ctx, *, member: discord.Member):
     await ctx.send(f'{member} joined on {member.joined_at}')
+
+@bot.group()
+async def cool(ctx):
+    
+    if ctx.invoked_subcommand is None:
+        await ctx.send(f'No, {ctx.subcommand_passed} is not cool')
+
+
+bot.run("")
